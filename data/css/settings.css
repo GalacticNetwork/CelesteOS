@@ -1,0 +1,20 @@
+.input {
+  border: none;
+  background: darkblue;
+  width: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  outline: none;
+  color: var(--text-secondary);
+}
+.btn {
+		border-radius: 15px;
+		margin-top: 10px;
+		background: transparent;
+		text-align: center;
+		width: 100px;
+		height: 30px;
+		border-style: solid;
+		-webkit-transition: 0.5s all ease;
+		transition: 0.5s ease all;
+	}

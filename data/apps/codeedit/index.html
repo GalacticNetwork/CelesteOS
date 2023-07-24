@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Editor</title>
+  <style>
+    body {
+  background-color: #222;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.editor {
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+.editor-header {
+  background-color: #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.filename {
+  font-weight: bold;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  margin-left: 10px;
+  outline: none;
+}
+
+.buttons button:hover {
+  text-decoration: underline;
+}
+
+.editor-body,
+.output-body {
+  border: none;
+  display: block;
+  height: 300px;
+  width: 100%;
+}
+
+.editor-body {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+}
+
+.output-body {
+  background-color: #fff;
+}
+  </style>
+</head>
+<body>
+  <div class="editor">
+    <div class="editor-header">
+      <div class="filename">untitled</div>
+      <div class="buttons">
+        <button class="save-button">Save</button>
+        <button class="run-button">Run</button>
+      </div>
+    </div>
+    <textarea class="editor-body"></textarea>
+    <iframe class="output-body"></iframe>
+  </div>
+  <script>
+    const editorBody = document.querySelector('.editor-body');
+const outputBody = document.querySelector('.output-body');
+const filename = document.querySelector('.filename');
+const saveButton = document.querySelector('.save-button');
+const runButton = document.querySelector('.run-button');
+
+let currentFilename = 'untitled';
+
+function updateFilename() {
+  filename.innerHTML = currentFilename;
+}
+
+function saveFile() {
+  const content = editorBody.value;
+  const blob = new Blob([content], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.setAttribute('href', url);
+  link.setAttribute('download', currentFilename);
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+function runCode() {
+  const content = editorBody.value;
+  outputBody.contentDocument.body.innerHTML = '';
+  outputBody.contentDocument.write(content);
+}
+
+editorBody.addEventListener('input', () => {
+  runCode();
+});
+
+saveButton.addEventListener('click', () => {
+  saveFile();
+});
+
+runButton.addEventListener('click', () => {
+  runCode();
+});
+
+updateFilename();
+editorBody.focus();
+  </script>
+</body>
+</html>

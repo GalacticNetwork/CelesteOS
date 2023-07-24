@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celeste OS</title>
+    <link rel="icon" href="data/images/newlogo.png" />
+	<link rel="shortcut icon" href="data/images/newlogo.png" />
+   <script src="https://cdn.jsdelivr.net/gh/FogNetwork/Nightmare-Windows/windows.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FogNetwork/Nightmare-Windows/windows.css">
+  <link href="data/css/main.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/gh/proudparrot2/quick.js/quick.js"></script>
+  <script src="https://kit.fontawesome.com/e897e5d5dc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app" id="0" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Web Browser | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/browser&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})"><img class="appimg" src="data/images/browser.png"><div class="apptitle">Web <br> Browser</div></div> <br>
+  </div>
+  <div class="app" id="1" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Calculator | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/calc&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})"><img class="appimg" src="data/images/calcu.png"><div class="apptitle">Calculator</div></div> <br>
+  </div>
+  <div class="app" id="2" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Terminal | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/terminal&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})"><img class="appimg" src="data/images/terminal.png"><div class="apptitle">Web <br> Terminal</div></div> <br>
+  </div>
+  <div class="app" id="3" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Code Editor | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/codeedit&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})"><img class="appimg" src="data/images/embed-close.png"><div class="apptitle">Code <br>Editor</div></div> <br>
+  </div>
+  <div class="app" id="4" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot; Emulator | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/webretro&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})"><img class="appimg" src="data/images/joystick.png"><div class="apptitle">Emulator</div></div> <br>
+  </div>
+  <div id="navbar">
+    <a class="navlink" id="mainLink" data-page="home"><i class="fa-solid fa-home"></i></a>
+    <a class="navlink" id="abLink" onclick="aboutblank()" data-page="aboutblank"><i class="fa-solid fa-eye-slash"></i></a>
+    <a class="navlink" id="browserLink" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Web Browser | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/browser&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})" data-page="browser"><i class="fa-solid fa-globe"></i></a>
+    <a class="navlink" id="webLink" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Games from artclass | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/data/apps/gxmes&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})" data-page="games"><i class="fa-solid fa-gamepad"></i></a>
+    <a class="navlink" onclick="location='settings.html'" id="settingsLink" data-page="settings"><i class="fa-solid fa-gear"></i></a>
+    <a class="navlink" onclick="new Nightmare({&quot;id&quot;:0, &quot;title&quot;: &quot;Web Browser | Celestial&quot;, &quot;type&quot;: &quot;url&quot;, &quot;url&quot;: &quot;https://celestial.easyreadwrite.xyz/apps.html&quot;, &quot;width&quot;: 800, &quot;height&quot;: 600, &quot;theme&quot;: &quot;dark&quot;})" id="appsLink" data-page="settings"><i class="fa-brands fa-app-store"></i></i></a>
+     <div id="time">
+      <p id="time-text">11:03</p>
+    </div>
+  </div>
+</body>
+  <script src="data/scripts/apps.js"></script>
+  <script src="data/scripts/time.js"></script>
+  <script src="data/scripts/aboutblank.js"></script>
+  <script src="data/scripts/settings.js"></script>
+    <script src="data/scripts/settings2.js"></script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click the Button</title>
+  <style>
+    body {
+  background-color: #222;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.game {
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+.scoreboard,
+.time-remaining {
+  background-color: #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.button {
+  background-color: #55f;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: Consolas, monospace;
+  font-size: 24px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.start-button {
+  background-color: #55f;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.start-button:hover {
+  background-color: #33c;
+}
+  </style>
+</head>
+<body>
+  <div align="center">
+    <h1>Welcome to click the button!</h1>
+    <h2>This is basically an clicking game!</h2>
+  <div class="game">
+    <div class="scoreboard">Score: <span class="score">0</span></div>
+    <div class="time-remaining">Time Remaining: <span class="time">30</span></div>
+    <button class="button">Click me!</button>
+    <button class="start-button">Start Game</button>
+  </div>
+  <script>
+    const button = document.querySelector('.button');
+const score = document.querySelector('.score');
+const time = document.querySelector('.time');
+const startButton = document.querySelector('.start-button');
+
+let scoreValue = 0;
+let timeValue = 30;
+let timerId = null;
+
+function startGame() {
+  scoreValue = 0;
+  timeValue = 30;
+  score.innerHTML = scoreValue;
+  time.innerHTML = timeValue;
+  clearInterval(timerId);
+  timerId = setInterval(() => {
+    timeValue--;
+    time.innerHTML = timeValue;
+    if (timeValue <= 0) {
+      clearInterval(timerId);
+      alert(`Game over! Your score is ${scoreValue}.`);
+      startButton.style.display = 'block';
+      button.style.display = 'none';
+    }
+  }, 1000);
+  button.addEventListener('click', () => {
+    scoreValue++;
+    score.innerHTML = scoreValue;
+  });
+  startButton.style.display = 'none';
+  button.style.display = 'block';
+}
+
+startButton.addEventListener('click', () => {
+  startGame();
+});
+
+startGame();
+  </script>
+</body>
+</html>

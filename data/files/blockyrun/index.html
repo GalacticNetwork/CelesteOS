@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blocky Runner</title>
+  <style>
+    body {
+  background-color: #222;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.game {
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+.scoreboard {
+  background-color: #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.game-board {
+  background-color: #fff;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.block {
+  background-color: #f00;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+
+.player {
+  background-color: #55f;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+
+.coin {
+  background-color: #ff0;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.start-button {
+  background-color: #55f;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.start-button:hover {
+  background-color: #33c;
+}
+  </style>
+</head>
+<body>
+  <div class="game">
+    <div class="scoreboard">Score: <span class="score">0</span></div>
+    <div class="game-board"></div>
+    <button class="start-button">Start Game</button>
+  </div>
+  <script>
+    const gameBoard = document.querySelector('.game-board');
+const score = document.querySelector('.score');
+const startButton = document.querySelector('.start-button');
+
+let playerPos = 200;
+let playerSpeed = 5;
+let blockSpeed = 2;
+let coinSpeed = 2;
+let scoreValue = 0;
+let gamePlaying = false;
+let blockId = null;
+let coinId = null;
+
+function createBlock() {
+  const block = document.createElement('div');
+  block.classList.add('block');
+  block.style.top = '0px';
+  block.style.left = Math.random() * (gameBoard.offsetWidth - block.offsetWidth) + 'px';
+  gameBoard.appendChild(block);
+  const moveBlock = setInterval(() => {
+    const blockTop = parseInt(block.style.top);
+    if (blockTop >= gameBoard.offsetHeight - block.offsetHeight) {
+      clearInterval(moveBlock);
+      gameBoard.removeChild(block);
+    } else {
+      block.style.top = blockTop + blockSpeed + 'px';
+      if (playerCollision(block)) {
+        endGame();
+      }
+    }
+  }, 10);
+}
+
+function createCoin() {
+  const coin = document.createElement('div');
+  coin.classList.add('coin');
+  coin.style.top = '0px';
+  coin.style.left = Math.random() * (gameBoard.offsetWidth - coin.offsetWidth) + 'px';
+  gameBoard.appendChild(coin);
+  const moveCoin = setInterval(() => {
+    const coinTop = parseInt(coin.style.top);
+    if (coinTop >= gameBoard.offsetHeight - coin.offsetHeight) {
+      clearInterval(moveCoin);
+      gameBoard.removeChild(coin);
+    } else {
+      coin.style.top = coinTop + coinSpeed + 'px';
+      if (playerCollision(coin)) {
+        scoreValue++;
+        score.innerHTML = scoreValue;
+        gameBoard.removeChild(coin);
+      }
+    }
+  }, 10);
+}
+
+function playerCollision(element) {
+  const player = document.querySelector('.player');
+  const rect1 = player.getBoundingClientRect();
+  const rect2 = element.getBoundingClientRect();
+  return !(rect1.right < rect2.left || 
+           rect1.left > rect2.right || 
+           rect1.bottom < rect2.top || 
+           rect1.top > rect2.bottom);
+}
+
+function movePlayer(direction) {
+  const player = document.querySelector('.player');
+  const currentPos = parseInt(player.style.left);
+  if (directionI apologize for the incomplete code in my previous response. Here's the complete version of the JavaScript code for the "Blocky Runner" game:
+
+```javascript
+const gameBoard = document.querySelector('.game-board');
+const score = document.querySelector('.score');
+const startButton = document.querySelector('.start-button');
+
+let playerPos = 200;
+let playerSpeed = 5;
+let blockSpeed = 2;
+let coinSpeed = 2;
+let scoreValue = 0;
+let gamePlaying = false;
+let blockId = null;
+let coinId = null;
+
+function createBlock() {
+  const block = document.createElement('div');
+  block.classList.add('block');
+  block.style.top = '0px';
+  block.style.left = Math.random() * (gameBoard.offsetWidth - block.offsetWidth) + 'px';
+  gameBoard.appendChild(block);
+  const moveBlock = setInterval(() => {
+    const blockTop = parseInt(block.style.top);
+    if (blockTop >= gameBoard.offsetHeight - block.offsetHeight) {
+      clearInterval(moveBlock);
+      gameBoard.removeChild(block);
+    } else {
+      block.style.top = blockTop + blockSpeed + 'px';
+      if (playerCollision(block)) {
+        endGame();
+      }
+    }
+  }, 10);
+}
+
+function createCoin() {
+  const coin = document.createElement('div');
+  coin.classList.add('coin');
+  coin.style.top = '0px';
+  coin.style.left = Math.random() * (gameBoard.offsetWidth - coin.offsetWidth) + 'px';
+  gameBoard.appendChild(coin);
+  const moveCoin = setInterval(() => {
+    const coinTop = parseInt(coin.style.top);
+    if (coinTop >= gameBoard.offsetHeight - coin.offsetHeight) {
+      clearInterval(moveCoin);
+      gameBoard.removeChild(coin);
+    } else {
+      coin.style.top = coinTop + coinSpeed + 'px';
+      if (playerCollision(coin)) {
+        scoreValue++;
+        score.innerHTML = scoreValue;
+        gameBoard.removeChild(coin);
+      }
+    }
+  }, 10);
+}
+
+function playerCollision(element) {
+  const player = document.querySelector('.player');
+  const rect1 = player.getBoundingClientRect();
+  const rect2 = element.getBoundingClientRect();
+  return !(rect1.right < rect2.left || 
+           rect1.left > rect2.right || 
+           rect1.bottom < rect2.top || 
+           rect1.top > rect2.bottom);
+}
+
+function movePlayer(direction) {
+  const player = document.querySelector('.player');
+  const currentPos = parseInt(player.style.left);
+  if (direction === 'left' && currentPos > 0) {
+    playerPos -= playerSpeed;
+  } else if (direction === 'right' && currentPos < gameBoard.offsetWidth - player.offsetWidth) {
+    playerPos += playerSpeed;
+  }
+  player.style.left = playerPos + 'px';
+}
+
+function startGame() {
+  scoreValue = 0;
+  score.innerHTML = scoreValue;
+  gamePlaying = true;
+  blockId = setInterval(() => {
+    createBlock();
+  }, 1000);
+  coinId = setInterval(() => {
+    createCoin();
+  }, 3000);
+  startButton.style.display = 'none';
+  document.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') {
+      movePlayer('left');
+    } else if (event.key === 'ArrowRight') {
+      movePlayer('right');
+    }
+  });
+}
+
+function endGame() {
+  clearInterval(blockId);
+  clearInterval(coinId);
+  gamePlaying = false;
+  alert(`Game over! Your score is ${scoreValue}.`);
+  startButton.style.display = 'block';
+}
+
+startButton.addEventListener('click', () => {
+  if (!gamePlaying) {
+    startGame();
+  }
+});
+  </script>
+</body>
+</html>

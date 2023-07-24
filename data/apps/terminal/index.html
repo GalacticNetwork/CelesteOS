@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Terminal</title>
+  <style>
+    body {
+  background-color: #222;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.terminal {
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+.terminal-header {
+  background-color: #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.terminal-header .icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("https://img.icons8.com/cotton/64/000000/console.png");
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.terminal-body {
+  padding: 10px;
+}
+
+.prompt {
+  color: #0f0;
+  margin-right: 5px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.input-field {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.output {
+  margin-bottom: 10px;
+}
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-header">
+      <span class="icon"></span>
+      <div class="title">Terminal</div>
+    </div>
+    <div class="terminal-body">
+      <div class="output"></div>
+      <div class="input-container">
+        <span class="prompt">$</span>
+        <input type="text" class="input-field" autofocus>
+      </div>
+    </div>
+  </div>
+ <script>
+   const terminalBody = document.querySelector('.terminal-body');
+const output = document.querySelector('.output');
+const inputField = document.querySelector('.input-field');
+
+function printOutput(text) {
+  output.innerHTML += `<div>${text}</div>`;
+}
+
+function processInput(input) {
+  printOutput(`<span class="prompt">$</span> ${input}`);
+  // Add your code to process the input here
+  // For example, you can use an API to execute commands on a server or run them locally using Node.js
+}
+
+inputField.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    const input = inputField.value;
+    processInput(input);
+    inputField.value = '';
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
+});
+
+inputField.focus();
+ </script>
+</body>
+</html>

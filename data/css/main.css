@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    background: url(/data/images/background.jpg);
+  color: black;
+  font-family: "Noto sans", sans-serif;
+  overflow: hidden;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#navbar {
+  text-align: center;
+  background-color: #1434A4;
+  color: white;
+  font-family: "Noto sans", sans-serif;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  height: 100vh; width: 100vw; 
+}
+
+    .text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+}
+.navlink {
+  opacity: 0.8;
+  transition: opacity 0.3s linear;
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navlink:hover {
+  opacity: 1;
+}
+#time {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  font-size: 20px;
+}
+.app {
+  cursor: pointer;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  margin: 8px;
+  user-select: none;
+  color: white;
+}
+    .appimg {
+  height: 65px;
+  width: 65px;
+  border-radius: 5px;
+}
+    .apptitle {
+      color: black;
+  max-width: 85px;
+  overflow: hidden;
+  white-space: nowrap;
+      text-align: center;
+}
+  .miniappimg {
+      border-radius: 50px;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
+     margin-left: auto;
+  margin-right: auto;
+  }

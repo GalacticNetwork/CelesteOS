@@ -1,0 +1,78 @@
+.card-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.apps-card {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+   transition: all 0.5s;
+  border: 2px solid transparent;
+}
+
+.apps-card:hover {
+   transform: rotate(-10deg) scale(1.3);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-color: #ffffff;
+}
+
+.apps-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apps-card .content {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  padding-bottom: 0px;
+  height: auto;
+  bottom: 0;
+  background-color: lightskyblue;
+  color: white;
+}
+
+.apps-card .title {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  margin: 0;
+  display: none;
+}
+
+.apps-card:hover .title {
+  display: block;
+}
+    .apps-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.apps-list a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: blue;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.apps-list a:hover {
+  background-color: cyan;
+}
