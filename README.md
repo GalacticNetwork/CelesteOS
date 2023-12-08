@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/GalacticNetwork/main/data/images/newlogo.png" height="200">
+<p align="center"><img src="https://raw.githubusercontent.com/GalacticNetwork/CelesteOS/main/data/images/newlogo.png" height="200">
 </p>
 
 <h1 align="center"><strong>CelesteOS</strong></h1>
