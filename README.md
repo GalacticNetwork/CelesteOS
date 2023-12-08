@@ -2,7 +2,7 @@
 </p>
 
 <h1 align="center"><strong>CelesteOS</strong></h1>
-<p align="center">An Over System for unblocking things!</p>
+<p align="center">An OS for unblocking things!</p>
 
 ### Features:
 - a browser
