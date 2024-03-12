@@ -1,0 +1,8 @@
+#selection {
+  position: absolute;
+  background-color: rgba(0, 0, 255, 0.3);
+  /* Blue with transparency */
+  border: 1px dashed #000;
+  pointer-events: none;
+  /* So that the selection div does not interfere with mouse events on other elements */
+}

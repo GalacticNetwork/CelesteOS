@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 body {
     background: url(/data/images/background.jpg);
   color: black;
-  font-family: "Noto sans", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   overflow: hidden;
   background-repeat:no-repeat;
   background-attachment:fixed;
@@ -15,7 +16,7 @@ body {
   text-align: center;
   background-color: #1434A4;
   color: white;
-  font-family: "Noto sans", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   padding: 15px;
   position: fixed;
   bottom: 0;
@@ -38,6 +39,7 @@ body {
   justify-content: center;
   width: 100vw;
   height: auto;
+      font-family: "Be Vietnam Pro", sans-serif;
 }
 .navlink {
   opacity: 0.8;
@@ -46,6 +48,7 @@ body {
   font-size: 25px;
   margin-left: 5px;
   margin-right: 5px;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 .navlink:hover {
@@ -65,6 +68,7 @@ body {
   margin: 8px;
   user-select: none;
   color: white;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
     .appimg {
   height: 65px;
@@ -77,6 +81,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
       text-align: center;
+      font-family: "Quicksand", sans-serif;
 }
   .miniappimg {
       border-radius: 50px;
